@@ -7,6 +7,21 @@
 
 import SwiftUI
 
+struct ProminentView: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .background(.blue)
+            .font(.largeTitle)
+    }
+}
+
+extension View {
+    func prominentView() -> some View {
+        modifier(ProminentView())
+    }
+}
+
+// Flag image view that will display the flags
 struct FlagImage: View {
     var currentImage: String = ""
     var body: some View {
